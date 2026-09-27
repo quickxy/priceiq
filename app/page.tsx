@@ -1,4 +1,6 @@
-import { Navigation, Footer } from './components'
+import Link from 'next/link'
+import { Navigation } from './navigation'
+import { Footer } from './footer'
 
 export default function HomePage() {
   return (
