@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PriceIQ — Market Intelligence Platform
 
-## Getting Started
+Track competitor prices, spot the gaps, and get alerted when you're being undercut.
 
-First, run the development server:
+## What it does
+
+PriceIQ monitors your product prices against major competitors and surfaces what matters:
+
+- **Price tracking** — watch your catalog against Amazon, Best Buy, Walmart, Newegg, Wayfair
+- **Gap analysis** — see exactly where you're overpriced or underpriced, in dollars
+- **Trend indicators** — rising, falling, or flat competitor pricing at a glance
+- **Smart alerts** — flagged automatically when a competitor undercuts you by more than $5
+
+## Tech stack
+
+- Next.js 16 (App Router)
+- Tailwind CSS
+- TypeScript
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The landing page links through to `/dashboard`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  page.tsx            # Marketing landing page
+  navigation.tsx      # Site navigation
+  footer.tsx          # Site footer
+  dashboard/
+    page.tsx          # Price dashboard (stat cards + comparison table)
+    data.ts           # Mock product data and pricing logic
+```
 
-## Learn More
+## Status
 
-To learn more about Next.js, take a look at the following resources:
+Working prototype with mock data. The dashboard demonstrates the core UX: stat cards, a product comparison table, price-gap highlighting, trend arrows, and alert states. No live price feeds, user accounts, or database layer yet.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Live price scraping / retailer API integrations
+- [ ] User accounts and custom watchlists
+- [ ] Email / SMS price-drop alerts
+- [ ] Historical price charts per product
+- [ ] Pricing page and signup flow
